@@ -1,14 +1,14 @@
-from fastapi import FastAPI, File, UploadFile, Header, HTTPException
+from fastapi import FastAPI, UploadFile, File, Header, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import pandas as pd
 import io
 
 app = FastAPI()
 
-# Enable CORS for POST
+# ✅ CORS MUST BE HERE (right after app = FastAPI())
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # allow all origins
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
